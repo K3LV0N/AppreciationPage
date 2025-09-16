@@ -67,7 +67,7 @@ Error generating stack: `+n.message+`
 
     Your dedication, kindness, and expertise have left a lasting impression, and I feel fortunate to have learned from you. Wishing you continued success and all the best in your future endeavors!
 
-    Warm regards, Haadi`},{id:10,name:"Rhushabh Bontapalle",text:"Thank you, Taryn, for your guidance and encouragement these past two months. Your patience and tips made our Cognizant training genuinely rewarding."},{id:11,name:"Aravindaswamy Anadakumar",text:`Hi Taryn,
+    Warm regards, Haadi`},{id:10,name:"Rhushabh Bontapalle",text:"Thank you, Taryn, for your guidance and encouragement these past two months. Your patience and tips made our Cognizant training genuinely rewarding."},{id:11,name:"Aravindaswamy Anandakumar",text:`Hi Taryn,
 
     I wanted to take a moment to sincerely thank you for the ADM Java Training sessions and for guiding us through the journey of transforming into workplace developers. Your clear explanations, patience, and encouragement made a significant difference in how we approached learning and applying new concepts.
 
