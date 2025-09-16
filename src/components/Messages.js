@@ -62,7 +62,7 @@ const messages = [
   },
   {
     id: 11,
-    name: "Aravindaswamy Anadakumar",
+    name: "Aravindaswamy Anandakumar",
     text: `Hi Taryn,\n
     I wanted to take a moment to sincerely thank you for the ADM Java Training sessions and for guiding us through the journey of transforming into workplace developers. Your clear explanations, patience, and encouragement made a significant difference in how we approached learning and applying new concepts.\n
     Your support throughout the training helped build our confidence and gave us a solid foundation to grow as professionals. I truly appreciate the time and effort you invested in helping us succeed.\n
