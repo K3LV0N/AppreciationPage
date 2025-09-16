@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import EnvelopeCard from "./components/EnvelopeCard";
+import MessageModal from "./components/MessageModal";
+import messages from "./components/messages";
+
+// https://k3lv0n.github.io/AppreciationPage/
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedMessage, setSelectedMessage] = useState(null);
+  const [openEnvelopeId, setOpenEnvelopeId] = useState(null);
+
+  const handleOpen = (msg) => {
+    setSelectedMessage(msg);
+    setOpenEnvelopeId(msg.id);
+  };
+
+  const handleClose = () => {
+    setSelectedMessage(null);
+    setOpenEnvelopeId(null); // closes the envelope
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen w-screen flex flex-col items-center justify-center bg-pink-50">
+      <h1 className="text-3xl font-bold mb-8 text-black">
+        💌 Taryn's Appreciation Page 💌
+      </h1>
+      <div className="grid grid-cols-5 gap-6">
+        {messages.map((msg) =>
+          msg.id < 11 ? ( // 👈 condition here
+            <EnvelopeCard
+              key={msg.id}
+              name={msg.name}
+              isOpen={openEnvelopeId === msg.id}
+              onOpen={() => handleOpen(msg)}
+            />
+          ) : null
+        )}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="grid grid-cols-4 gap-6 mt-8">
+        {messages.map((msg) =>
+          msg.id >= 11 ? ( // 👈 condition here
+            <EnvelopeCard
+              key={msg.id}
+              name={msg.name}
+              isOpen={openEnvelopeId === msg.id}
+              onOpen={() => handleOpen(msg)}
+            />
+          ) : null
+        )}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      {selectedMessage && (
+        <MessageModal message={selectedMessage} onClose={handleClose} />
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
